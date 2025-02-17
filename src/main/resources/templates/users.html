@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>users</title>
+</head>
+<body>
+<ul th:each="user : ${allUsers}">
+    <li>
+        <h4>
+            Имя: <span th:text="${user.name}">имя</span>
+            <br>
+            Роль: <span th:text="${user.role.role}">роль</span>
+            <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-primary">Подробнее</a>
+        </h4>
+    </li>
+    <hr>
+</ul>
+</body>
+</html>
